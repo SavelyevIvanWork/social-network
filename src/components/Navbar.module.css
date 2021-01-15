@@ -1,0 +1,17 @@
+.nav {
+    grid-area: nav;
+    background-color: antiquewhite;
+}
+
+.item {
+    background-color: tomato;
+    color: white;
+}
+
+.active {
+    background-color: purple;
+}
+
+.link {
+    color: inherit;
+}
