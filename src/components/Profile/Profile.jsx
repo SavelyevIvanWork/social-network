@@ -3,7 +3,7 @@ import style from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 const Profile = () => {
     return (
-        <div className={style.content}>
+        <div>
             <div>
                 <img src="https://arte1.ru/images/detailed/4/23608.jpg" alt=""/>
             </div>
@@ -13,4 +13,4 @@ const Profile = () => {
     )
 }
 
-export default Profile
+export default Profile;
