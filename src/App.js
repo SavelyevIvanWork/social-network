@@ -15,7 +15,7 @@ const App = (props) => {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     {/*<Route path='/profile' component={Profile}/> возвращает компонент в виде функции*/}
-                    <Route path='/profile' render={() => <Profile state={props.state.profilePage}/>} />
+                    <Route path='/profile' render={() => <Profile state={props.state.profilePage} addPost={props.addPost}/>} />
                     <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>} /> {/*Возвращает компонент в виде тега*/}
                 </div>
             </div>
