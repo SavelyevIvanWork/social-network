@@ -6,8 +6,13 @@
 
 }
 
-.dialog {
+.dialogLink {
+    color: red;
+}
 
+
+.active {
+    color: darkblue;
 }
 
 .message {

@@ -7,6 +7,10 @@ const Post = (props) => {
         <div className={style.item}>
             <span>Avatar</span>
             {props.message}
+            <div>
+                {props.likesCount}
+            </div>
+
         </div>
     )
 }
