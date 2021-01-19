@@ -16,6 +16,8 @@
 //     {message: 'It\'s my first post', likesCount: 15},
 // ]
 
+import {rerenderEntireTree} from "../render";
+
 const state = {
     profilePage: {
         messages: [
@@ -46,6 +48,7 @@ export let addPost = (postMessage) => {
         likesCount: 7,
     }
     state.profilePage.messages.push(newPost)
+    rerenderEntireTree(state)
 }
 
 export default state
