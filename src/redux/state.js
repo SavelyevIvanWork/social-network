@@ -25,6 +25,7 @@ const state = {
             {message: 'It\'s my first post', likesCount: 15},
             {message: 'It\'s my first post', likesCount: 15},
         ],
+        newPostText: 'it-kamasutra',
     },
 
     dialogsPage: {
@@ -44,10 +45,17 @@ const state = {
 export let addPost = (postMessage) => {
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 7,
     }
+    // console.log(newPost)
     state.profilePage.messages.push(newPost)
+    state.profilePage.newPostText = ''
+    rerenderEntireTree(state)
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText
     rerenderEntireTree(state)
 }
 
