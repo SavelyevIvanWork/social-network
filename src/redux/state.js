@@ -23,12 +23,15 @@ const store = {
         },
     },
 
+    _callSubscriber() {
+        console.log('State')
+    },
+
     getState() {
         return this._state
     },
-
-    _callSubscriber() {
-        console.log('State')
+    subscribe(observer) {
+        this._callSubscriber = observer
     },
 
     addPost(postMessage) {
@@ -42,15 +45,23 @@ const store = {
         this._state.profilePage.newPostText = ''
         this._callSubscriber(this._state)
     },
-
     updateNewPostText(newText) {
         this._state.profilePage.newPostText = newText
         this._callSubscriber(this._state)
     },
 
-    subscribe(observer) {
-        this._callSubscriber = observer
-    },
+    dispatch(action) {
+
+        switch (action.type) {
+            case 'ADD-POST':
+                this.addPost()
+                break
+            case 'UPDATE-NEW-POST-TEXT':
+                this.updateNewPostText(action.newText)
+                break
+        }
+    }
+
 }
 
 export default store
