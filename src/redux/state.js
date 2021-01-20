@@ -1,8 +1,5 @@
-const ADD_POST = 'ADD_POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT'
-
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY'
-const SEND_MESSAGE = 'SEND_MESSAGE'
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
 
 const store = {
     _state: {
@@ -41,71 +38,15 @@ const store = {
         this._callSubscriber = observer
     },
 
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText
-        this._callSubscriber(this._state)
-    },
-    addPost(postMessage) {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: 7,
-        }
-        // console.log(newPost)
-        this._state.profilePage.messages.message.push(newPost)
-        this._state.profilePage.newPostText = ''
-        this._callSubscriber(this._state)
-    },
-
-    updateNewMessageBody(textBody) {
-        this._state.dialogsPage.newMessageBody = textBody
-        this._callSubscriber(this._state)
-    },
-    setMessage() {
-        let message = {
-            id: Date.now(),
-            message: this._state.dialogsPage.newMessageBody
-        }
-        // console.log(message)
-        this._state.dialogsPage.messages.push(message)
-        this._state.dialogsPage.newMessageBody = ''
-        this._callSubscriber(this._state)
-    },
-
     dispatch(action) {
 
-        switch (action.type) {
-            case ADD_POST:
-                this.addPost()
-                break
-            case UPDATE_NEW_POST_TEXT:
-                this.updateNewPostText(action.newText)
-                break
-            case UPDATE_NEW_MESSAGE_BODY:
-                this.updateNewMessageBody(action.textBody)
-                break
-            case SEND_MESSAGE:
-                this.setMessage()
-                break
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+
+        this._callSubscriber(this._state)
+
     }
 
-}
-
-export const addPostActionCreator = () => {
-    return {type: ADD_POST}
-}
-
-export const updateNewPostTextActionCreator = (newText) => {
-    return {type: UPDATE_NEW_POST_TEXT, newText: newText,}
-}
-
-export const updateNewMessageBodyActionCreator = (textBody) => {
-    return {type: UPDATE_NEW_MESSAGE_BODY, textBody: textBody,}
-}
-
-export const setMessageActionCreator = () => {
-    return {type: SEND_MESSAGE}
 }
 
 export default store
