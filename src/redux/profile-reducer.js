@@ -1,8 +1,17 @@
 const ADD_POST = 'ADD_POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT'
 
+let initialState = {
+    messages: [
+        {message: 'Hi, how are you?', likesCount: 10},
+        {message: 'It\'s my first post', likesCount: 15},
+        {message: 'It\'s my first post', likesCount: 15},
+    ],
+    newPostText: 'it-kamasutra',
+}
 
-const profileReducer = (state, action) => {
+const profileReducer = (state = initialState, action) => {
+    debugger
     const updateNewPostText =(newText) => {
         state.newPostText = newText
     }
@@ -12,7 +21,6 @@ const profileReducer = (state, action) => {
             message: state.newPostText,
             likesCount: 7,
         }
-        console.log(state)
         state.messages.push(newPost)
         state.newPostText = ''
     }
