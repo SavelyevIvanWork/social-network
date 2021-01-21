@@ -8,7 +8,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
-const App = (props) => {
+const App = () => {
     // console.log(props.state)
     return (
         <BrowserRouter>
@@ -17,8 +17,8 @@ const App = (props) => {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     {/*<Route path='/profile' component={Profile}/> возвращает компонент в виде функции*/}
-                    <Route path='/profile' render={() => <Profile store={props.store} />} />
-                    <Route path='/dialogs' render={() => <DialogsContainer store={props.store} />} /> {/*Возвращает компонент в виде тега*/}
+                    <Route path='/profile' render={() => <Profile />} />
+                    <Route path='/dialogs' render={() => <DialogsContainer />} /> {/*Возвращает компонент в виде тега*/}
                 </div>
             </div>
         </BrowserRouter>
