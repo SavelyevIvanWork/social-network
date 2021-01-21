@@ -11,7 +11,6 @@ let initialState = {
 }
 
 const profileReducer = (state = initialState, action) => {
-    debugger
     const updateNewPostText =(newText) => {
         state.newPostText = newText
     }
