@@ -4,38 +4,6 @@ import Dialogs from "./Dialogs";
 // import StoreContext from "../../StoreContext";
 import {connect} from "react-redux";
 
-// const DialogsContainer = () => {
-//     return (
-//         <StoreContext.Consumer>
-//             {
-//                 (store) => {
-//                     let state = store.getState()
-//
-//                     let onSendMessageClick = () => {
-//                         store.dispatch(setMessageActionCreator())
-//                     }
-//
-//                     let onNewMessageChange = (textBody) => {
-//                         store.dispatch(updateNewMessageBodyActionCreator(textBody))
-//                     }
-//
-//                     return (
-//                         <Dialogs
-//                             onSendMessageClick={onSendMessageClick}
-//                             onNewMessageChange={onNewMessageChange}
-//                             posts={state.dialogsPage.posts}
-//                             messages={state.dialogsPage.messages}
-//                             newMessageBody={state.dialogsPage.newMessageBody}
-//                         />
-//                     )
-//                 }
-//             }
-//
-//         </StoreContext.Consumer>
-//
-//     )
-//
-// }
 
 let mapStateToProps = (state) => {
     return {
