@@ -4,7 +4,7 @@ const SET_USERS = 'SET_USERS'
 
 let initialState = {
     users: [
-        {id: 1, followed: true, fullName: 'Ivan', status: 'scsc', location: {city: 'Minsk', country: 'Belarus'}},
+        // {id: 1, followed: true, avatarSRC: 'http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkWT0i_I7ODkRB1M57H0EFXaaKTM5SRkZCeTgDn6uOyic', fullName: 'Иосиф Бродский', status: 'Сядь в поезд, высадись у моря', location: {city: 'Ленинград', country: 'СССР'}},
 
     ],
     newPostText: 'it-kamasutra',
