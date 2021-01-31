@@ -1,0 +1,7 @@
+.active {
+    font-weight: bold;
+}
+.users_page {
+    cursor: pointer;
+    margin: 0 10px;
+}
